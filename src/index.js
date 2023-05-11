@@ -86,9 +86,7 @@ async function loadNextImages() {
       loadMoreBtn.style.display = 'block';
     } else {
       loadMoreBtn.style.display = 'none';
-      Notiflix.Notify.info(
-        "We're sorry, but you've reached the end of search results."
-      );
+      Notiflix.Notify.info(`Loaded ${pageCount} more images`);
     }
   } catch (error) {
     console.error(error);
