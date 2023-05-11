@@ -72,6 +72,11 @@ async function loadNextImages() {
     displayImages(images);
     page++;
     const totalHits = images.totalHits;
+
+    if (page === 2) {
+      totalImagesLoaded = images.length;
+    }
+
     if (totalImagesLoaded < totalHits) {
       loadMoreBtn.style.display = 'block';
     } else {
@@ -89,6 +94,7 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   gallery.innerHTML = '';
   page = 1;
+  totalImagesLoaded = 0;
   loadNextImages();
 });
 
